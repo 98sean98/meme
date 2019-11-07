@@ -1,25 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {Typography, Container, makeStyles} from '@material-ui/core';
+import meme from './memes/got_meme.png';
+
+const useStyles = makeStyles({
+  container: {
+    textAlign: 'center',
+    margin: '5vh auto',
+    maxWidth: 'calc(500px + 2vw)',
+    height: '90vh'
+  },
+  heading: {
+    margin: '1vh auto'
+  },
+  image: {
+    width: '100%'
+  }
+})
 
 function App() {
+  const classes = useStyles();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container className={classes.container}>
+      <Typography variant='h4' className={classes.heading}>You must have too much time on your hands to be here. Anyways, please enjoy a daily dose of memes.</Typography>
+      <img src={meme} alt='my meme' className={classes.image}/>
+    </Container>
   );
 }
 
